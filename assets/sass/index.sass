@@ -1,0 +1,425 @@
+$main-bg: url(../images/main-background.png)
+$main-bg-height: 1024.768px
+$dashboard-base-bg: url(../images/dashboard-base.png)
+$dashboard-base-height: 903px
+$dasboard-notification-bell-image: url(../images/header/notification-bell.png)
+$dashboard-notification-bell-number-background: #f50057
+$sidebar-profile-pic: url(../images/sidebar/sidebar-profilepic.png)
+$sidebar-games-icon: url(../images/sidebar/games-icon.png)
+$sidebar-videos-icon: url(../images/sidebar/videos-icon.png)
+$sidebar-events-icon: url(../images/sidebar/events-icon.png)
+$sidebar-leaderboards-icon: url(../images/sidebar/leaderboards-icon.png)
+$cart1-bg: url(../images/Carts/cart1.png)
+$cart2-bg: url(../images/Carts/cart2.png)
+$cart3-bg: url(../images/Carts/cart3.png)
+$minicart-bg: url(../images/Carts/mini-cart.png)
+$minicart-pic: url(https://via.placeholder.com/50x50)
+$minicart-person: url(https://via.placeholder.com/25x25)
+$viewAllButtonColor: #00d67e
+$cart-user-icon: url(../images/Carts/user-icon.png)
+$user-star-icon: url(../images/Carts/star.png)
+
+html,
+body,
+ul,
+ol
+  margin:  0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Roboto', sans-serif
+
+.cursor-pointer
+    cursor: pointer
+
+body
+  background: $main-bg
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  height: $main-bg-height
+
+.dashboard-base
+  background: $dashboard-base-bg
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  height: $dashboard-base-height
+  display: flex
+  flex-direction: column
+  padding: 2.1% 3.5% 4.3% 3.5%
+
+.dashboard-header
+    height: 85px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.dashboard-header-left
+    padding-left: 40px
+
+.dashboard-header-logo
+    position: relative
+    top: 10px
+    left: 10px
+
+.dashboard-header-mid
+    min-width: 25%
+    height: 15px
+    background-color: #efeafb
+    border-radius: 20px
+    display: flex
+    padding: 10px
+    -webkit-box-shadow: 0 0 1px 1px #ccc inset
+    -moz-box-shadow: 0 0 1px 1px #ccc inset
+    box-shadow: 0 0 1px 1px #ccc inset
+
+.dashboard-header-mid input
+    border: none
+    background: #efeafb
+    padding-left: 5px
+    width: 100%
+
+.dashboard-sidebar-rectangle
+    transform: rotate(0deg)
+    transition: all .5s ease
+
+.dashboard-sidebar-rectangle.collapsed
+    transform: rotate(90deg)
+
+.dashboard-header-mid input:focus
+    outline: none
+
+.dashboard-header-right
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.dashboard-header-right *
+    padding: 0px 5px
+
+.dashboard-notification-bell
+    background: $dasboard-notification-bell-image
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    min-width: 9px
+    min-height: 19px
+    position: relative
+    margin-right: 20px
+    cursor: pointer
+
+.dashboard-notification-bell span
+    background-color: $dashboard-notification-bell-number-background
+    color: white
+    padding: 3px 5px
+    border-radius: 50%
+    font-size: 10px
+    position: absolute
+    right: -5px
+    top: -10px
+
+.dashboard-profile-container
+    display: flex
+    align-items: center
+
+.dashboard-profile-container img:last-child
+    width: 10px
+    height: 5px
+
+.dashboard-content
+    height: 950px
+    width: 100%
+    display: flex
+    flex-direction: row
+
+.dashboard-content-body
+    width: 85%
+
+.dashboard-content-body.streched
+    width: 100%
+
+.dashboard-content-sidebar
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    padding-top: 3%
+    text-align: center
+    transition: all .2s ease
+    opacity: 1
+    width: 15%
+    border-right: 1px solid #EEF1F4
+
+.dashboard-content-sidebar.collapsed
+    opacity: 0
+    width: 0%
+    font-size: 0px
+    padding: 0px
+
+.dashboard-content-sidebar-top div:not(:first-child)
+    margin: 10px 0px
+
+.dashboard-content-profile-container
+    background: $sidebar-profile-pic
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    width: 59px
+    height: 59px
+    position: relative
+    margin: 20px auto
+
+.dashboard-content-notification-count
+    position: absolute
+    top: -5px
+    right: -5px
+    color: white
+    background: $dashboard-notification-bell-number-background
+    padding: 5px 8px
+    border-radius: 50%
+    font-size: 10px
+    box-shadow: 0px 0px 20px rgba(245,0,87,.8)
+
+.dashboard-content-profile-skill-container
+    display: flex
+    justify-content: center
+
+.dashboard-content-sidebar-bottom
+    width: 100%
+
+.dashboard-content-sidebar-bottom *
+    list-style-type: none
+    text-align: center
+    font-size: 14px
+    font-weight: 500
+    width: 100%
+
+.dashboard-content-sidebar-bottom li
+    padding: 5px 0px
+    position: relative
+    font-weight: bold
+
+.dashboard-content-sidebar-bottom > ul > li
+    margin: 40px 0px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    box-sizing: border-box
+
+.dashboard-content-sidebar-bottom > ul > li:first-child:before
+    content: $sidebar-games-icon
+
+.dashboard-content-sidebar-bottom > ul > li:nth-child(3):before
+    content: $sidebar-videos-icon
+
+.dashboard-content-sidebar-bottom > ul > li:nth-child(4):before
+    content: $sidebar-events-icon
+
+.dashboard-content-sidebar-bottom > ul > li:nth-child(5):before
+    content: $sidebar-leaderboards-icon
+
+.dashboard-content-sidebar-bottom > ul > li:hover
+    font-weight: bold
+    border-left: 4px solid $dashboard-notification-bell-number-background
+    background-image: linear-gradient(to right, #d90707, #f95076, #f893c5, #efcef3, #ffffff)
+    opacity: .8
+
+.dashboard-content-sidebar-bottom-notification
+    position: absolute
+    right: 10px
+    top: 10px
+    padding: 2px
+    background: #1ce1b0
+    color: black
+    width: 10px
+
+.dashboard-content-body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 50px
+    font-family: 'Poppins', sans-serif
+
+.dashboard-content-top
+    background: white
+    width: 100%
+    height: 75px
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+.dashboard-content-top-menu-item
+    cursor: pointer
+
+.dashboard-content-top-menu-item:hover
+    border-bottom: 5px solid $dashboard-notification-bell-number-background
+
+.dashboard-content-top-select
+    border: 0px
+    outline: 0px
+    width: 200px
+    border-bottom: 1px solid #ccc
+    font-size: 16px
+    font-family: 'Roboto', sans-serif
+
+.dashboard-content-top-menu-icon
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    background: url(../images/Carts/tab-icon.png)
+    width: 65px
+    height: 14px
+
+.dashboard-content-bottom
+    top: -20px
+
+.dashboard-content-top,
+.dashboard-content-mid,
+.dashboard-content-bottom
+    position: relative
+
+
+.dashboard-content-title
+    font-size: 14px
+    font-weight: 600
+
+.dashboard-content-subtitle
+    font-size: 18px
+    font-weight: 700
+
+.dashboard-content-cart-container, .dashboard-content-mini-cart-container
+    display: flex
+    justify-content: space-between
+
+.dashboard-content-cart
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding: 20px
+    box-sizing: border-box
+
+.dashboard-content-cart-ratings
+    display: flex
+
+.dashboard-content-cart-ratings > div
+    width: 25%
+    height: 25px
+    background: black
+    margin-right: 20px
+    border-radius: 30px
+    display: flex
+    justify-content: space-around
+    color: white
+    font-size: 12px
+    align-items: center
+
+.dashboard-content-cart-rating-count:before
+    content: $cart-user-icon
+    margin-right: 5px
+
+.dashboard-content-star-container
+    display: flex
+
+.dashboard-content-star
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    height: 10px
+    width: 10px
+    background: $user-star-icon
+
+.dashboard-content-cart:first-child,
+.dashboard-content-cart:nth-child(2),
+.dashboard-content-cart:nth-child(3)
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    height: 219px
+    width: 30%
+
+.dashboard-content-cart:first-child
+    background: $cart1-bg
+
+.dashboard-content-cart:nth-child(2)
+    background: $cart2-bg
+
+.dashboard-content-cart:nth-child(3)
+    background: $cart3-bg
+
+.dashboard-content-mini-cart
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    height: 150px
+    width: 25%
+    background: $minicart-bg
+    padding: 20px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    position: relative
+
+.dashboard-content-mini-cart-top,.dashboard-content-mini-cart-bottom
+    display: flex
+
+.dashboard-content-mini-cart-bottom
+    justify-content: space-between
+
+.dashboard-content-mini-cart-pic
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    background: $minicart-pic
+    height: 50px
+    width: 50px
+    margin-right: 10px
+    border-radius: 50%
+
+.dashboard-content-mini-cart-person
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    background: $minicart-person
+    width: 25px
+    height: 25px
+    margin: 0px 1px
+    border-radius: 50%
+
+.dashboard-content-cart-details
+    display: flex
+
+.dashboard-content-info
+    font-size: 13px
+    text-decoration: underline
+    color: white
+    cursor: pointer
+
+.dashboard-content-cart-pic
+    background-repeat: no-repeat !important
+    background-size: 100% 100% !important
+    background: url(https://via.placeholder.com/60x60)
+    width: 60px
+    height: 60px
+    margin: 0px 1px
+    border-radius: 50%
+    margin-right: 10px
+
+.dashboard-content-mini-cart-person-container
+    display: flex
+
+.mini-cart-icon
+    position: absolute
+    right: 20px
+    top: 10px
+    cursor: pointer
+
+.dashboard-content-mini-cart-count
+    font-size: 13px
+    font-weight: 500
+    position: relative
+    top: 10px
+    letter-spacing: 1.5px
+
+.dashboard-content-view-all-button
+    position: absolute
+    right: 10px
+    top: 0px
+    background: $viewAllButtonColor
+    color: white
+    padding: 5px 10px
+    font-size: 13px
+    cursor: pointer
